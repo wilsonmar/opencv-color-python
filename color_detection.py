@@ -1,26 +1,29 @@
+# From https://data-flair.training/blogs/project-in-python-colour-detection/
+# USAGE: python3 color_detection.py --image colorpic.jpg
+
 import cv2
 import numpy as np
 import pandas as pd
 import argparse
 
-#Creating argument parser to take image path from command line
+# 2. Create argument parser to take image path from command line
 ap = argparse.ArgumentParser()
 ap.add_argument('-i', '--image', required=True, help="Image Path")
 args = vars(ap.parse_args())
 img_path = args['image']
 
-#Reading the image with opencv
+# Read image with opencv:
 img = cv2.imread(img_path)
 
-#declaring global variables (are used later on)
+# Declaring global variables (are used later on)
 clicked = False
 r = g = b = xpos = ypos = 0
 
-#Reading csv file with pandas and giving names to each column
+# Read csv file with Pandas and giving names to each column
 index=["color","color_name","hex","R","G","B"]
 csv = pd.read_csv('colors.csv', names=index, header=None)
 
-#function to calculate minimum distance from all colors and get the most matching color
+# Function to calculate minimum distance from all colors and get the most matching color
 def getColorName(R,G,B):
     minimum = 10000
     for i in range(len(csv)):
@@ -65,7 +68,7 @@ while(1):
             
         clicked=False
 
-    #Break the loop when user hits 'esc' key    
+    # Break loop when user hits 'esc' key:
     if cv2.waitKey(20) & 0xFF ==27:
         break
     
