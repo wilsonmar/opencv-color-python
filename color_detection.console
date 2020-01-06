@@ -1,0 +1,24 @@
+color_detection.log
+
+  ~/gits/wilsonmar/opencv-color-python
+$ ./install.sh
+
+➜ Bash 5.0.11(1)-release
+
+➜ OS_TYPE=macOS on hostname=NYC-192850-C02Z70CMLVDT.
+
+>>> From file ./install.sh in /Users/wilson_mar/gits/wilsonmar/opencv-color-python
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+NameError: name 'cv2' is not defined
+
+>>> pip3 install opencv-python  with --upgrade ...
+Requirement already up-to-date: opencv-python in /usr/local/lib/python3.7/site-packages (4.1.2.30)
+Requirement already satisfied, skipping upgrade: numpy>=1.14.5 in /usr/local/lib/python3.7/site-packages (from opencv-python) (1.17.4)
+
+>>> pip3 install numpy with 1.17.4 ...
+Requirement already up-to-date: opencv-python in /usr/local/lib/python3.7/site-packages (4.1.2.30)
+Requirement already satisfied, skipping upgrade: numpy>=1.14.5 in /usr/local/lib/python3.7/site-packages (from opencv-python) (1.17.4)
+1.17.4
+_
+✔ End of script after -61 minutes and -22232 bytes disk space consumed.
